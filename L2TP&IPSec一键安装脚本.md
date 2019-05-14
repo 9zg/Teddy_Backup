@@ -1,13 +1,13 @@
 ### 关于本脚本：
-名词解释如下
-L2TP（Layer 2 Tunneling Protocol）
-IPSec（Internet Protocol Security）
-IKEv2 (Internet Key Exchange v2)
-能实现 IPsec 的目前总体上有 openswan，libreswan，strongswan 这3种。
-libreswan 是基于 openswan 的 fork，所以现在各个发行版基本已经看不到 openswan 的身影了。
+名词解释如下  
+L2TP（Layer 2 Tunneling Protocol）  
+IPSec（Internet Protocol Security）  
+IKEv2 (Internet Key Exchange v2)  
+能实现 IPsec 的目前总体上有 openswan，libreswan，strongswan 这3种。  
+libreswan 是基于 openswan 的 fork，所以现在各个发行版基本已经看不到 openswan 的身影了。  
 当然也有使用 strongswan 的。
 
-之所以要更新 L2TP 一键安装脚本，是因为随着各个 Linux 发行版不断推陈出新，原有的脚本已经不适应现在的需求。
+之所以要更新 L2TP 一键安装脚本，是因为随着各个 Linux 发行版不断推陈出新，原有的脚本已经不适应现在的需求。  
 本脚本通过编译安装最新版 libreswan 来实现 IPSec（CentOS7 下则是全部 yum 安装），yum 或 apt-get 来安装 xl2tpd，再根据各个发行版的使用方法不同，部署防火墙规则。
 
 ### 使用方法：
@@ -86,26 +86,26 @@ l2tp -m (Modify a user password)
 Enjoy it!
 ```
 
-如果你要想对用户进行操作，可以使用如下命令：
-l2tp -a 新增用户
-l2tp -d 删除用户
-l2tp -m 修改现有的用户的密码
-l2tp -l 列出所有用户名和密码
+如果你要想对用户进行操作，可以使用如下命令：  
+l2tp -a 新增用户  
+l2tp -d 删除用户  
+l2tp -m 修改现有的用户的密码  
+l2tp -l 列出所有用户名和密码  
 l2tp -h 列出帮助信息
 
 ### 其他事项：
 
-1、脚本在安装完成后，已自动启动进程，并加入了开机自启动。
-2、脚本会改写 iptables 或 firewalld 的规则。
+1、脚本在安装完成后，已自动启动进程，并加入了开机自启动。  
+2、脚本会改写 iptables 或 firewalld 的规则。  
 3、脚本安装时，会即时将安装日志写到 /root/l2tp.log 文件里，如果你安装失败，可以通过此文件来寻找错误信息。
 
 ### 使用命令：
 
-ipsec status （查看 IPSec 运行状态）
-ipsec verify （查看 IPSec 检查结果）
-/etc/init.d/ipsec start|stop|restart|status （CentOS6 下使用）
-/etc/init.d/xl2tpd start|stop|restart （CentOS6 下使用）
-systemctl start|stop|restart|status ipsec （CentOS7 下使用）
-systemctl start|stop|restart xl2tpd （CentOS7 下使用）
-service ipsec start|stop|restart|status （Debian/Ubuntu 下使用）
+ipsec status （查看 IPSec 运行状态）  
+ipsec verify （查看 IPSec 检查结果）  
+/etc/init.d/ipsec start|stop|restart|status （CentOS6 下使用）  
+/etc/init.d/xl2tpd start|stop|restart （CentOS6 下使用）  
+systemctl start|stop|restart|status ipsec （CentOS7 下使用）  
+systemctl start|stop|restart xl2tpd （CentOS7 下使用）  
+service ipsec start|stop|restart|status （Debian/Ubuntu 下使用）  
 service xl2tpd start|stop|restart （Debian/Ubuntu 下使用）
