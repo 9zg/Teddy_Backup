@@ -108,7 +108,7 @@ Shadowsocks-libev 版是唯一不能单纯靠修改配置文件来开启多端�
 ##### 下载该启动脚本并赋予执行权限
 
 ```
-wget -O /etc/init.d/shadowsocks-manager https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-manager
+wget -O /etc/init.d/shadowsocks-manager https://raw.githubusercontent.com/yuutadono/shadowsocks_install/master/shadowsocks-manager
 chmod 755 /etc/init.d/shadowsocks-manager
 ```
 
